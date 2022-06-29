@@ -1386,6 +1386,7 @@ button,
 }
 
 .nav-bar__wrapper-mob {
+  display: none;
   border: 0;
   outline: 0;
   padding: 0;
@@ -1789,7 +1790,7 @@ button,
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  background-image: url("../../img/svg/icon-arrow.svg");
+  background-image: url("../img/svg/icon-arrow.svg");
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -1868,6 +1869,10 @@ button,
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
+  }
+
+  .nav-bar__wrapper-mob {
+    display: block;
   }
 
   .nav-bar__wrapper {
