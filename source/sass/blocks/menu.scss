@@ -88,34 +88,50 @@
 
   &__list {
     display: flex;
+    justify-content: space-between;
     height: 100%;
     min-height: 100%;
     flex-grow: 1;
     list-style-type: none;
     margin: 0;
-    padding: 0 20px 0 59px;
+    padding: 0;
     background-color: $color-raisin-black;
-
-    @include vp-1439 {
-      padding: 0 30px;
-      overflow: hidden;
-    }
-
-    @include vp-1023 {
-      padding: 0 10px;
-      overflow: auto;
-    }
 
     @include vp-767 {
       flex-direction: column;
       width: 100%;
-      padding: 0;
     }
   }
 
-  &__menu-item {
+  &__item {
+    background-color: $color-raisin-black;
+
     @include vp-767 {
       width: 100%;
     }
   }
+}
+
+.swiper-block {
+  width: 100%;
+  overflow: hidden;
+  background-color: $color-raisin-black;
+  padding: 0 20px 0 59px;
+
+  @include vp-1439 {
+    padding: 0 30px;
+  }
+
+  @include vp-1023 {
+    padding: 0 10px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.swiper-wrapper {
+  width: 100%;
 }

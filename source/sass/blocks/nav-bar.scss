@@ -83,12 +83,14 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
     column-gap: 22px;
+    row-gap: 15px;
 
     @include vp-1439 {
       column-gap: 11px;

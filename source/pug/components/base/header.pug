@@ -118,13 +118,14 @@ mixin header(headerMods, currentUrl)
         .menu
           button.menu__search
             +icon("icon-search", "20","19")
-          ul.menu__list
-            each link, index in saleLinks
-              li.menu__item
-                if(index === 0)
-                   a.menu__link.menu__link--active(href=link.href)=link.text
-                else
-                   a.menu__link(href=link.href)=link.text
+          .swiper-block
+            ul.menu__list.swiper-wrapper
+              each link, index in saleLinks
+                li.menu__item.swiper-slide
+                  if(index === 0)
+                    a.menu__link.menu__link--active(href=link.href)=link.text
+                  else
+                    a.menu__link(href=link.href)=link.text
           button.menu__sale-link(href="#")!= "Распродажа"
       +modal("modal--menu modal--no-scale modal--translate")(data-modal="modal-menu")
         +modal-menu(headerLinks)
