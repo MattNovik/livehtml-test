@@ -116,4 +116,42 @@
 
     pointer-events: auto;
   }
+
+  &--menu {
+    .modal__wrapper {
+      padding: 0;
+      justify-content: flex-end;
+    }
+
+    .modal__content {
+      width: 300px;
+      height: 100%;
+      padding: 50px 22px 40px;
+
+      @include vp-767 {
+        width: 100%;
+      }
+    }
+
+    .modal__menu-mob {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    .modal__menu-mob-item {
+      text-align: right;;
+    }
+    .modal__close-btn {
+      top: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
 }

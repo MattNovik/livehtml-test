@@ -1,0 +1,121 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  background-color: $color-transparent;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px 7px;
+    background-color: $color-tangerine-yellow;
+    border-radius: 10px 0 0 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      color: $color-default-white;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 9px 19px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-default-white;
+    transition: all .3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-tangerine-yellow;
+    }
+
+    &--active {
+      background-color: $color-tangerine-yellow;
+      color: $color-default-black;
+
+      &:hover {
+        color: $color-default-black;
+      }
+    }
+
+    @include vp-767 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__sale-link {
+    padding: 10px 15px 8px 14px;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background-color: $color-tangerine-yellow;
+    text-transform: uppercase;
+    border-radius: 0 10px 10px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+      //background-color: $color-default-white;
+      color: $color-default-white;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    height: 100%;
+    min-height: 100%;
+    flex-grow: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px 0 59px;
+    background-color: $color-raisin-black;
+
+    @include vp-1439 {
+      padding: 0 30px;
+      overflow: hidden;
+    }
+
+    @include vp-1023 {
+      padding: 0 10px;
+      overflow: auto;
+    }
+
+    @include vp-767 {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__menu-item {
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+}

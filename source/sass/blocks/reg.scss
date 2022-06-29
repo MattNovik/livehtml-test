@@ -1,0 +1,110 @@
+.reg {
+  display: flex;
+  flex-direction: column;
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 27px;
+    margin: 0 0 15px;
+
+    @include vp-1023 {
+      column-gap: 15px;
+      margin: 0 0 8px;
+    }
+
+    span:first-child {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    span:last-child {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: -0.025em;
+    }
+  }
+
+  &__tel {
+    margin: 0 0 16px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      background-color: $color-light-silver;
+
+      @include vp-1023 {
+        bottom: -6px;
+      }
+    }
+
+    @include vp-1023 {
+      text-align: right;
+      margin: 0 0 10px;
+    }
+
+    a {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 29px;
+      height: 29px;
+      letter-spacing: -0.02em;
+      transition: all .3s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include vp-1023 {
+        font-size: 20px;
+        line-height: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  &__place {
+    display: flex;
+    justify-content: space-between;
+    line-height: 14px;
+  }
+
+  &__change-place {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 11px;
+    border: 0;
+    outline: 0;
+    background-color: $color-transparent;
+    text-decoration: underline dotted;
+    cursor: pointer;
+    line-height: 14px;
+
+    &:before {
+      content: "";
+      height: 7px;
+      width: 7px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      background-image: url("../../img/svg/icon-arrow.svg");
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      &:before {
+        transform-origin: 50% 50%;
+        transform: translate(0, -50%) rotate(90deg);
+      }
+    }
+  }
+}

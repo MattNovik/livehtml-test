@@ -1,0 +1,12 @@
+mixin regCont()
+  .reg
+    .reg__contacts
+      .reg__time
+        span Время работы:
+        span 10:00 — 19:00
+      .reg__tel
+        a(href="tel:+74957212525")!= "8 495 721-25-25"
+      .reg__place
+        span Москва
+        button.reg__change-place(type="button")!= "сменить"
+

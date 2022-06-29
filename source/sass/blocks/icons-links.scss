@@ -1,0 +1,42 @@
+.icons-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 11px;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__link {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 11px;
+    line-height: 14px;
+    transition: all .3s ease;
+
+    &:hover {
+      .icons-links__wrapper-text {
+        text-decoration: none;
+      }
+    }
+
+    svg {
+      width: 19px;
+    }
+  }
+
+  &__link:first {
+    line-height: 16px;
+  }
+
+  &__wrapper-text {
+    display: flex;
+    text-decoration: underline;
+  }
+
+  &__text {
+    white-space: pre;
+  }
+
+}

@@ -3,34 +3,128 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "index.html",
-        text: "Главная"
+        text: "Каталог инструментов"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Всё для сада"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Ручной интрумент"
+      },
+      {
+        href: "#",
+        text: "Электрика"
+      },
+      {
+        href: "#",
+        text: "Доставка"
+      },
+      {
+        href: "#",
+        text: "Оплата"
+      },
+      {
+        href: "#",
+        text: "О нас"
+      },
+    ]
+  -
+    const saleLinks = [
+      {
+        href: "#",
+        text: "Перфораторы"
+      },
+      {
+        href: "#",
+        text: "Дрели"
+      },
+      {
+        href: "#",
+        text: "Шлифмашины"
+      },
+      {
+        href: "#",
+        text: "Пистолеты"
+      },
+      {
+        href: "#",
+        text: "Электропилы"
+      },
+      {
+        href: "#",
+        text: "Наборы инструментов"
+      },
+      {
+        href: "#",
+        text: "Акксесуары"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
+      .header__top
+        if(currentPage === "main")
+          a.header__logo
+            +picture("content/logo","logo", "png","210","134", "logo")
+        else
+          a.header__logo(href="main.html", aria-label="Переход на главную")
+            +picture("content/logo","logo", "png","210","134", "logo")
+        .header__top-item
+          .nav-bar
+            nav.nav-bar__wrapper
+              ul.nav-bar__list
+                each link, index in headerLinks
+                  li.nav-bar__item
+                    a.nav-bar__link(href=link.href)=link.text
+            button.nav-bar__wrapper-mob(type="button", data-open-modal="modal-menu")
+              +icon("icon-burger", 16,16)
+            .nav-bar__reg
+              button.nav-bar__reg-enter(type="button")!= "Вход"
+              button.nav-bar__reg-reg(type="button")!= "Регистрация"
+          .wrapper-info
+            .wrapper-info__wrap
+              .wrapper-info__adv
+              .wrapper-info__links
+                ul.icons-links
+                  li.icons-links__item
+                    a.icons-links__link(href="#")
+                      +icon("icon-busket", 19, 18)
+                      .icons-links__wrapper-text
+                        span.icons-links__js-text 3 шт. / 17 250 р.
+                  li.icons-links__item
+                    a.icons-links__link(href="#")
+                      +icon("icon-star", 14, 14)
+                      .icons-links__wrapper-text
+                        span.icons-links__text!= 'Избранное '
+                        span.icons-links__js-text (7)
+                  li.icons-links__item
+                    a.icons-links__link(href="#")
+                      +icon("icon-scale", 18, 16)
+                      .icons-links__wrapper-text
+                        span.icons-links__text!= 'К сравнению '
+                        span.icons-links__js-text (5)
+              .wrapper-info__items
+                a(href="#")
+                  +picture("content","item-first", "jpg","70","70", "item-first")
+                a(href="#")
+                  +picture("content","item-second", "jpg","70","70", "item-second")
+                a(href="#")
+                  +picture("content","item-third", "jpg","70","70", "item-third")
+            .wrapper-info__reg
+              +regCont()
+      .header__bottom
+        .menu
+          button.menu__search
+            +icon("icon-search", "20","19")
+          ul.menu__list
+            each link, index in saleLinks
+              li.menu__item
+                if(index === 0)
+                   a.menu__link.menu__link--active(href=link.href)=link.text
                 else
-                  a.main-nav__link(href=link.href)=link.text
+                   a.menu__link(href=link.href)=link.text
+          button.menu__sale-link(href="#")!= "Распродажа"
+      +modal("modal--menu modal--no-scale modal--translate")(data-modal="modal-menu")
+        +modal-menu(headerLinks)

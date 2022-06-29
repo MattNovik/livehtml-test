@@ -1,0 +1,5 @@
+mixin modal-menu(headerLinks)
+  ul.modal__menu-mob
+    each link, index in headerLinks
+      li.modal__menu-mob-item
+        a.modal__menu-mob-link(href=link.href)=link.text

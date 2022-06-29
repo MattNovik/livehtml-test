@@ -1,0 +1,102 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+  color: $color-raisin-black;
+  padding: 0 0 9px;
+
+  @include vp-1023 {
+    flex-direction: row-reverse;
+  }
+
+  &__reg {
+    display: flex;
+    column-gap: 28px;
+  };
+
+  &__wrapper-mob {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    background-color: $color-transparent;
+    color: $color-raisin-black;
+  }
+
+  &__reg-enter,
+  &__reg-reg {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    line-height: 14px;
+    background-color: $color-transparent;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__reg-enter {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -13.5px;
+      width: 1px;
+      height: 100%;
+      background-color: $color-default-black;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-light-silver;
+  }
+
+  &__wrapper {
+    height: 100%;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    column-gap: 22px;
+
+    @include vp-1439 {
+      column-gap: 11px;
+    }
+  }
+
+  &__link {
+    white-space: nowrap;
+    transition: all .3s ease;
+
+    &:hover {
+      color: $color-default-black;
+      text-decoration: underline;
+    }
+  }
+}
