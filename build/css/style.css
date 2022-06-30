@@ -2070,7 +2070,7 @@ button,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .menu__link {
