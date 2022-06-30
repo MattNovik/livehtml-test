@@ -118,6 +118,7 @@ mixin header(headerMods, currentUrl)
         .menu
           button.menu__search
             +icon("icon-search", "20","19")
+            span.menu__search-text поиск
           .swiper-block
             ul.menu__list.swiper-wrapper
               each link, index in saleLinks

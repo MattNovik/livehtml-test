@@ -29,8 +29,20 @@
 
     @include vp-767 {
       width: 100%;
+      column-gap: 10px;
       border-radius: 10px 10px 0 0;
       border-bottom: solid 1px $color-default-white;
+    }
+  }
+
+  &__search-text {
+    display: none;
+
+    @include vp-767 {
+      font-weight: 600;
+      line-height: 16px;
+      display: flex;
+      text-transform: uppercase;
     }
   }
 

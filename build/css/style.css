@@ -1641,6 +1641,10 @@ button,
   color: #ffffff;
 }
 
+.menu__search-text {
+  display: none;
+}
+
 .menu__link {
   display: inline-block;
   padding: 9px 19px;
@@ -2047,8 +2051,20 @@ button,
 
   .menu__search {
     width: 100%;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: solid 1px #ffffff;
+  }
+
+  .menu__search-text {
+    font-weight: 600;
+    line-height: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-transform: uppercase;
   }
 
   .menu__link {
