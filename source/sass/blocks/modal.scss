@@ -130,6 +130,7 @@
 
       @include vp-767 {
         width: 100%;
+        padding: 50px 16px 40px;
       }
     }
 
@@ -152,6 +153,11 @@
       align-items: center;
       width: 20px;
       height: 20px;
+
+      @include vp-767 {
+        right: 14px;
+        top: 18px;
+      }
     }
   }
 }

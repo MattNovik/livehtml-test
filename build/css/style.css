@@ -1996,6 +1996,12 @@ button,
 
   .modal--menu .modal__content {
     width: 100%;
+    padding: 50px 16px 40px;
+  }
+
+  .modal--menu .modal__close-btn {
+    right: 14px;
+    top: 18px;
   }
 
   .nav-bar {
