@@ -1411,6 +1411,7 @@ button,
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: #252525;
 }
 
 .nav-bar__reg-enter:hover,
@@ -1629,6 +1630,7 @@ button,
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: #000000;
 }
 
 .menu__search:hover {
@@ -1676,6 +1678,7 @@ button,
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
+  color: #000000;
 }
 
 .menu__sale-link:hover {

@@ -21,6 +21,7 @@
     outline: 0;
     cursor: pointer;
     transition: all .3s ease;
+    color: $color-default-black;
 
     &:hover {
       color: $color-default-white;
@@ -74,6 +75,7 @@
     line-height: 16px;
     transition: all .3s ease;
     cursor: pointer;
+    color: $color-default-black;
 
     &:hover {
       //background-color: $color-default-white;
