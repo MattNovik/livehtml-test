@@ -442,6 +442,10 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+html * {
+  color: #000000;
+}
+
 body {
   width: 100%;
   height: 100%;
